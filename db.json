@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "dtNascimento": "123",
+      "classificacao": "8"
+
+    },
+    {
+      "id": 1,
+      "name": "admin",
+      "dtNascimento": "123",
+      "classificacao": "8"
+
+    },
+    {
+      "id": 1,
+      "name": "admin",
+      "dtNascimento": "123",
+      "classificacao": "8"
+
+    }
+  ]
+}
