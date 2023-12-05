@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [],
 
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -19,7 +20,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatInputModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
   ],
 
 })
