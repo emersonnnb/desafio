@@ -2,67 +2,38 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-//Estilização do Menu de ações
-td:last-child.mat-column-actions .mat-icon {
-  margin-left: 8px;
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
-  cursor: pointer;
+//seta cor no header da table
+[mat-header-row]{
+  background: #fafafa !important;
 }
 
-td:last-child.mat-column-actions {
-  padding: 0;
-  text-align: center;
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
 }
 
-td:last-child.mat-column-actions>.mat-icon {
-  font-size: 24px!important;
-  margin-left: 9px;
-  margin-right: 9px;
-  width: 24px;
-  height: 24px;
+.mat-row:hover {
+  background-color: #d8d8d8 !important;
 }
 
-.tab-row-menu {
-  margin-top: 2px;
-  position: absolute;
-  display: flex;
-  align-items: center;
+th.mat-header-cell {
+  border-bottom-width: 0px;
+}
+
+.mat-header-cell {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 16px !important;
+  line-height: 24px;
+  color: #363636;
+  letter-spacing: 0.05em;
   justify-content: center;
-  height: 46px;
-  top: 0;
-  background-color: #363636;
-  padding: 11px 10px;
-  width: max-content;
-  font-weight: 400;
-  margin-right: 16px;
-  right: 0;
-  z-index: 1;
-  border-radius: 8px;
-  color: #fff;
 }
 
-.tab-row-menu .label-txt {
-  color: #e5e5e5;
-  display: inline-flex;
-  border-right: 1px solid #ffffff;
-  padding-right: 16px;
-  padding-left: 8px;
-  margin-right: 8px;
+.mdc-data-table__cell {
+  overflow: unset !important;
 }
 
-.tab-row-menu .cancel {
-  margin-right: 8px;
-  color: #e33e38;
-}
-
-//Estilização da ultima row da table (cadastrar)
 .footer-row {
   background: #f4f4f4 !important;
   margin: 0 auto !important;
@@ -83,4 +54,118 @@ td:last-child.mat-column-actions>.mat-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// ::ng-depp .mat-mdc-snack-bar-label {
+//   display: flex !important;
+//   justify-content: center !important;
+//   align-items: center !important;
+// }
+
+// .material-icons{
+//   font-size: 16px !important;
+// }
+
+// .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+//   padding: 0.4em 0 0.8em !important;
+// }
+
+// .mat-mdc-form-field-infix {
+//   display: block;
+//   min-height: 46px;
+// }
+
+// .mat-mdc-select-trigger {
+//   padding-top: 5px;
+// }
+
+// .mat-mdc-button.mat-mdc-button-base,
+// .mat-mdc-raised-button.mat-mdc-button-base,
+// .mat-mdc-unelevated-button.mat-mdc-button-base,
+// .mat-mdc-outlined-button.mat-mdc-button-base {
+//   height: 46px;
+// }
+
+// .mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input,
+// .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+//   margin-top: 5px;
+// }
+
+// Menu de ações
+td:last-child.mat-column-actions {
+  .mat-icon {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+//Menu de ações
+.tab-row-menu {
+  //Montagem do Menu de ações
+  margin-top: 2px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  top: 0;
+  background-color: #363636;
+  padding: 11px 10px;
+  width: max-content;
+  font-weight: 400;
+  margin-right: 16px;
+  right: 0;
+  z-index: 1;
+  border-radius: 8px;
+  color: #fff;
+  //campo de texto da ação dentro do menu
+  .label-txt {
+    color: #e5e5e5;
+    display: inline-flex;
+    border-right: 1px solid #ffffff;
+    padding-right: 16px;
+    padding-left: 8px;
+    margin-right: 8px;
+  }
+  //Botão fechar do menu de ações
+  .cancel {
+    margin-right: 8px;
+    color: #e33e38;
+  }
+}
+
+//Estilização para intercalar as cores da row da table
+.mat-mdc-table {
+  .mat-mdc-row {
+    &:nth-child(odd) {
+      background-color: #f4f4f4 !important;
+    }
+
+    &:nth-child(even) {
+      background-color: #fff !important;
+    }
+  }
+
+  //Centralizando todo header da table
+  .mat-mdc-header-row {
+    .mat-mdc-header-cell {
+      text-align: center;
+    }
+
+    .mat-column-actions {
+      width: 150px;
+    }
+  }
+
+  //Centralizado todos os itens da row
+  .mat-mdc-row {
+    .mat-mdc-cell {
+      text-align: center;
+    }
+  }
+
 }

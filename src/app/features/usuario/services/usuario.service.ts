@@ -18,7 +18,7 @@ export class UsuarioService {
   }
 
   public getIdUser(id: number): Observable<any> {
-    return this.httpClient.get(`${environment.apiUrl}/users${id}`);
+    return this.httpClient.get(`${environment.apiUrl}/users/${id}`);
   };
 
   public postUser(payload: UserModel): Observable<UserModel> {
