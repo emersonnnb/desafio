@@ -37,7 +37,7 @@
         Salvar
       </button>
 
-      <button class="w-100" mat-flat-button *ngIf="mode === 'view'">
+      <button class="w-100" mat-flat-button *ngIf="mode === 'view'" (click)="changeToEdit()">
         <mat-icon aria-hidden="false">edit</mat-icon>
         Editar
       </button>

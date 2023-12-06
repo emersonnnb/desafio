@@ -59,6 +59,7 @@ export class UsuarioComponent implements OnInit {
       .afterClosed()
       .subscribe(() => {
         this.getUserslist(this.pageEvent);
+        this.menuIndex = undefined;
       });
   }
 

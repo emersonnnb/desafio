@@ -131,4 +131,10 @@ export class AddEditUsuarioComponent implements OnInit {
       },
     });
   }
+
+  changeToEdit(): void {
+    this.mode = "edit";
+    this.form.enable();
+  }
+
 }
