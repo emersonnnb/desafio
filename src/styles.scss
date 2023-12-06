@@ -6,7 +6,63 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+//Estilização do Menu de ações
+td:last-child.mat-column-actions .mat-icon {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
+td:last-child.mat-column-actions {
+  padding: 0;
+  text-align: center;
+}
+
+td:last-child.mat-column-actions>.mat-icon {
+  font-size: 24px!important;
+  margin-left: 9px;
+  margin-right: 9px;
+  width: 24px;
+  height: 24px;
+}
+
+.tab-row-menu {
+  margin-top: 2px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  top: 0;
+  background-color: #363636;
+  padding: 11px 10px;
+  width: max-content;
+  font-weight: 400;
+  margin-right: 16px;
+  right: 0;
+  z-index: 1;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.tab-row-menu .label-txt {
+  color: #e5e5e5;
+  display: inline-flex;
+  border-right: 1px solid #ffffff;
+  padding-right: 16px;
+  padding-left: 8px;
+  margin-right: 8px;
+}
+
+.tab-row-menu .cancel {
+  margin-right: 8px;
+  color: #e33e38;
+}
+
+//Estilização da ultima row da table (cadastrar)
 .footer-row {
   background: #f4f4f4 !important;
   margin: 0 auto !important;
