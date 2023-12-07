@@ -1,24 +1,24 @@
 <div class="container">
   <div class="example-container mat-elevation-z8">
     <div style="margin-top: 10px;">
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" (matSortChange)="sortData($event)">
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="name">Nome</th>
           <td mat-cell *matCellDef="let row">
             {{ row.name }}
           </td>
         </ng-container>
 
-        <ng-container matColumnDef="dtNascimento">
-          <th mat-header-cell *matHeaderCellDef>Data de nascimento</th>
+        <ng-container matColumnDef="dtBirth">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="dtBirth">Data de nascimento</th>
           <td mat-cell *matCellDef="let row">
             {{ row.dtBirth | date:"dd/MM/yyyy"}}
           </td>
         </ng-container>
 
-        <ng-container matColumnDef="classificacao">
-          <th mat-header-cell *matHeaderCellDef>Classificação</th>
+        <ng-container matColumnDef="classification">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="classification">Classificação</th>
           <td mat-cell *matCellDef="let row">
             {{ row.classification }}
           </td>

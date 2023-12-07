@@ -21,7 +21,7 @@
 
         <mat-form-field floatLabel="always" appearance="outline" class="w-100">
           <mat-label>Data de Nascimento</mat-label>
-          <input matInput onlyNumberDate [matDatepicker]="picker1" formControlName="dtBirth" placeholder="11/11/1111">
+          <input matInput [matDatepicker]="picker1" formControlName="dtBirth" placeholder="11/11/1111">
           <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>

@@ -22,7 +22,6 @@ import { UsuarioService } from '../services/usuario.service';
 import { UserModel } from '../model/user.model';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
-
 @Component({
   selector: 'app-add-edit-usuario',
   standalone: true,
@@ -57,7 +56,6 @@ export class AddEditUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data)
     this.mode = this.data.mode;
     this.id = this?.data?.data?.id;
 

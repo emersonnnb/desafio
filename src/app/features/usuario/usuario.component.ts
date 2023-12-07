@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,20 +13,24 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddEditUsuarioComponent } from './add-edit-usuario/add-edit-usuario.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog.component';
+import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-usuario',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatTableModule, MatDialogModule, MatSnackBarModule,],
+  imports: [CommonModule, MatIconModule, MatTableModule, MatDialogModule, MatSnackBarModule, MatSortModule],
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.scss'],
 })
 export class UsuarioComponent implements OnInit {
+
+  @ViewChild(MatSort) sort!: MatSort;
+
   dataSource = new MatTableDataSource<UserModel>();
   displayedColumns: string[] = [
     'name',
-    'dtNascimento',
-    'classificacao',
+    'dtBirth',
+    'classification',
     'actions',
   ];
   menuIndex?: number = undefined;
@@ -34,6 +38,8 @@ export class UsuarioComponent implements OnInit {
   searchForm!: FormGroup;
   habilitaPesquisa = true;
 
+  pageOrder = 'ASC';
+  pageSort = 'name';
   pageEvent: PageEvent = {
     pageIndex: 0,
     pageSize: 10,
@@ -73,7 +79,15 @@ export class UsuarioComponent implements OnInit {
     const value = this.searchForm?.controls['searchType'].value;
 
     this.pageEvent = event;
-    let params = new HttpParams();
+
+    let params = new HttpParams()
+
+    if (this.pageOrder) {
+      params = params
+      .set('_order', this.pageOrder)
+      .set('_sort', this.pageSort)
+    }
+
     if (!this.habilitaPesquisa) {
       params = params.set(key, value);
     }
@@ -106,5 +120,13 @@ export class UsuarioComponent implements OnInit {
         });
       }
     });
+  }
+
+  sortData(sort: Sort) {
+    if (sort.active !== this.pageSort) {
+      this.pageSort = sort.active;
+    }
+    this.pageOrder = (sort.direction || "ASC").toUpperCase();
+    this.getUserslist(this.pageEvent);
   }
 }

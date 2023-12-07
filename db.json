@@ -4,19 +4,19 @@
       "id": 2,
       "name": "234",
       "dtBirth": "2023-12-21T03:00:00.000Z",
-      "classification": "234345"
+      "classification": "1"
     },
     {
       "id": 3,
       "name": "teste ",
       "dtBirth": "2023-12-06T03:00:00.000Z",
-      "classification": "sdfsdfv"
+      "classification": "2"
     },
     {
       "id": 4,
       "name": "Emerson",
       "dtBirth": "1988-02-07T03:00:00.000Z",
-      "classification": "10"
+      "classification": "3"
     }
   ]
 }
