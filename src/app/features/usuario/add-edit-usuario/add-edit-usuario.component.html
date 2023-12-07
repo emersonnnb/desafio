@@ -7,7 +7,7 @@
           <ng-container *ngSwitchCase="'edit'"> Editar </ng-container>
           <ng-container *ngSwitchCase="'create'"> Cadastrar </ng-container>
         </ng-container>
-        Usuário
+        usuário
       </u>
     </div>
 
@@ -30,17 +30,18 @@
           <mat-label>Classificação</mat-label>
           <input matInput placeholder="Classificação" formControlName="classification" (change)="form.controls['classification'].setValue(form.controls['classification'].value.trim())">
         </mat-form-field>
+
+        <button class="w-100" color="primary" mat-flat-button *ngIf="mode !== 'view'" (click)="addUsser()">
+          <mat-icon aria-hidden="false">save</mat-icon>
+          Salvar
+        </button>
+
+        <button class="w-100" mat-flat-button *ngIf="mode === 'view'" (click)="changeToEdit()">
+          <mat-icon aria-hidden="false">edit</mat-icon>
+          Editar
+        </button>
       </form>
 
-      <button class="w-100" color="primary" mat-flat-button *ngIf="mode !== 'view'" (click)="addUsser()">
-        <mat-icon aria-hidden="false">save</mat-icon>
-        Salvar
-      </button>
-
-      <button class="w-100" mat-flat-button *ngIf="mode === 'view'" (click)="changeToEdit()">
-        <mat-icon aria-hidden="false">edit</mat-icon>
-        Editar
-      </button>
     </div>
   </section>
 </div>

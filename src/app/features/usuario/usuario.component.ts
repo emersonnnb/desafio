@@ -86,13 +86,13 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
-  deletUser(produtoId: number) {
+  deletUser(userId: number) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: 'Tem certeza que deseja excluir?',
     });
     dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
-        this.api.deleteUser(produtoId).subscribe({
+        this.api.deleteUser(userId).subscribe({
           next: () => {
             this.getUserslist(this.pageEvent);
             this._snackBar.open('Dados salvos com sucesso!!', '', {
