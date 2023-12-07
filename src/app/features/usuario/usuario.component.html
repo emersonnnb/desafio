@@ -32,7 +32,7 @@
             </mat-icon>
             <div *ngIf="menuIndex === i" class="tab-row-menu">
               <div class="label-txt">{{ labelAcaoAtualtemListaMenu }}</div>
-              <mat-icon class="cursor-pointer" (click)="openDialog(row.id, 'view')"
+              <mat-icon class="cursor-pointer" (click)="openDialog(row, 'view')"
                 (mouseenter)="labelAcaoAtualtemListaMenu = 'Visualizar'">
                 remove_red_eye
               </mat-icon>

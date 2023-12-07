@@ -57,6 +57,7 @@ export class AddEditUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.data)
     this.mode = this.data.mode;
     this.id = this?.data?.data?.id;
 
